@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="orcamentosGeral" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d2cdb27f-69ce-45bf-b92c-7254e07ed3e3">
+	<property name="ireport.zoom" value="4.594972986357223"/>
+	<property name="ireport.x" value="1509"/>
+	<property name="ireport.y" value="407"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="total" class="java.lang.Double">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     orcamento.`id` AS orcamento_id,
+     orcamento.`cliente` AS orcamento_cliente,
+     orcamento.`dataInicio` AS orcamento_dataInicio,
+     orcamento.`item` AS orcamento_item,
+     orcamento.`observacoes` AS orcamento_observacoes,
+     orcamento.`previsaoEntrega` AS orcamento_previsaoEntrega,
+     orcamento.`servico` AS orcamento_servico,
+     orcamento.`valor` AS orcamento_valor,
+     orcamento.`usuario_id` AS orcamento_usuario_id,
+     orcamento.`situacao` AS "situação"
+FROM
+     `orcamento` orcamento]]>
+	</queryString>
+	<field name="orcamento_id" class="java.lang.Integer"/>
+	<field name="orcamento_cliente" class="java.lang.String"/>
+	<field name="orcamento_dataInicio" class="java.sql.Date"/>
+	<field name="orcamento_item" class="java.lang.String"/>
+	<field name="orcamento_observacoes" class="java.lang.String"/>
+	<field name="orcamento_previsaoEntrega" class="java.sql.Date"/>
+	<field name="orcamento_servico" class="java.lang.String"/>
+	<field name="orcamento_valor" class="java.lang.Double"/>
+	<field name="orcamento_usuario_id" class="java.lang.Integer"/>
+	<field name="situação" class="java.lang.String"/>
+	<sortField name="PAGE_NUMBER" type="Variable"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="0" width="595" height="64" uuid="b551e6f1-684e-4e34-9d80-6f41875a8478"/>
+				<imageExpression><![CDATA["wood.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="-20" y="0" width="592" height="64" uuid="41818c38-9deb-4788-960e-63801bfdbf8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ORÇAMENTOS GERAL]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="42a64d5a-abe3-4b4c-bcff-f876dea82370"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="16" height="15" uuid="1d2781c0-b190-4aa3-8cd2-b93f3aad8d74"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="16" y="19" width="123" height="15" uuid="70a5c737-21e4-4bd2-982e-ff2be5bdcb08"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="323" y="19" width="62" height="15" uuid="4c8d06d7-7c84-46f7-9a4d-c07b616052c6"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[D. INICIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="385" y="19" width="70" height="15" uuid="14f3bad8-82c8-40df-9105-5229fad86b9b"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[P. ENTREGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="139" y="19" width="184" height="15" uuid="be2451bb-1b9f-45b8-b132-3a97d30818f7"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[SERVIÇO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="513" y="19" width="40" height="15" uuid="75cfcd54-2f18-4b4c-854e-e364143f425b"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[VALOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="455" y="19" width="58" height="15" uuid="cf30dd5d-b944-4c9f-9a6d-03bf357c0e07"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[SITUAÇÃO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="1c8e0856-45f0-49e0-b4b0-0a97571c6de6"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="16" height="15" uuid="a10a8778-d76f-4af0-bdae-131603971ceb"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{orcamento_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="16" y="0" width="123" height="15" uuid="b51c0b30-09dc-4cf3-b538-39ec364de012"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{orcamento_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="323" y="0" width="62" height="15" uuid="ffef7524-bbb5-4160-a6aa-032eacf0d6fd"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{orcamento_dataInicio})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="139" y="0" width="184" height="15" uuid="1b64aeb3-3993-4e26-aa28-b7ed63943fd0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{orcamento_servico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="513" y="0" width="40" height="15" uuid="cea1ce78-65e9-4ea8-99f7-e42dadaf1ae8"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{orcamento_valor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="385" y="0" width="70" height="15" uuid="21323ece-aa1a-407e-97f6-0992f51835be"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{orcamento_previsaoEntrega})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="58" height="15" uuid="ae2645ae-e2ac-4dec-a1cd-983bcb1cfeab"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{situação}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="33" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="11c6af8b-90c4-4c02-9f16-ec9fcf0e2c0f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="493" y="4" width="79" height="15" uuid="70bc57e4-b091-4fa7-8c79-96c078be12a3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="474" y="4" width="19" height="20" uuid="7f911ddb-1994-4adc-bd52-20e7aff58769"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="3" width="100" height="20" uuid="81d50711-dfec-4a8d-b1dc-61d2bcc6a581"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR TOTAL]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="319" y="0" width="194" height="20" uuid="94703421-8b3f-4f39-aa5b-e8102e776957"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pagina"+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="80b4a42b-ff7c-4515-a8d5-2d8ba798f46c"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="34d92c8a-85e3-43f8-9c10-ba06cb062126"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

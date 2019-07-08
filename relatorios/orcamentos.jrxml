@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="orcamentos" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="351f596c-3d76-4df3-befb-296351d3e5f8">
+	<property name="ireport.zoom" value="0.9090909090909117"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="158"/>
+	<parameter name="id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from orcamento where id = $P{id}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dataInicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="observacoes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="previsaoEntrega" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="servico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="usuario_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpf" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="79" uuid="b6c83724-08ba-4f15-8308-63b4488e0a1e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORÇAMENTO PRÉVIO]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="224" height="79" uuid="bf0dabb0-5070-40c5-8fbc-a9a3afed96df"/>
+				<box>
+					<pen lineStyle="Solid"/>
+					<topPen lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<imageExpression><![CDATA["C:\\Refrival\\relatorios\\logo\\logo.jpeg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="68" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="12" width="802" height="1" uuid="378625e6-99ba-4b92-86af-9652adb27cc2"/>
+			</line>
+			<textField>
+				<reportElement x="81" y="0" width="471" height="61" uuid="431fca79-e20e-4f85-bd36-916888c503ec"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="124" height="61" uuid="eecc2ec6-2186-4cc5-b904-081bf32e74c4"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLIENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="564" y="0" width="47" height="61" uuid="ff67d4df-1c50-498f-b120-a55f4737879d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="611" y="0" width="188" height="61" uuid="f9d9ff56-355f-4fd6-af4d-ccd3e763b887"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="230" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="802" height="1" uuid="f835dbdb-0bcd-4558-a507-9ba2d9ec16e0"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="1" width="224" height="61" uuid="27c50b3a-7c2e-4e92-9822-fd3e287d82e1"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SERVIÇO PRESTADO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="173" y="1" width="627" height="61" uuid="40679329-51ac-49e6-857c-73d16a7064a1"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{servico}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="62" width="236" height="61" uuid="c2c3b0a3-ed62-4543-9694-819109697371"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA DE INICIO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="134" y="61" width="112" height="61" uuid="4f355737-6029-43b6-881a-6e5cb0de1024"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{dataInicio})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="265" y="62" width="236" height="61" uuid="a6414b55-02d7-4060-a6fb-3742a738c1eb"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PREVISÃO DE ENTREGA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="464" y="62" width="100" height="61" uuid="0c9e24eb-6836-4a36-84a0-9f34a0389cd4"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{previsaoEntrega})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="580" y="62" width="99" height="61" uuid="3bd3b337-3c3e-429f-8a2b-43998989fe31"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[VALOR: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="666" y="62" width="136" height="60" uuid="ef4a37c7-9918-4281-9b94-02a07db4470a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="134" width="802" height="1" uuid="1749de40-2f4c-4743-9de3-470f665301b3"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="162" width="236" height="56" uuid="72f866f2-d718-4092-925e-02491cc36808"/>
+				<textElement verticalAlignment="Top">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVAÇÕES:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="134" y="152" width="666" height="78" uuid="fc0e6557-f940-471a-9b17-d7a55f312bc2"/>
+			</rectangle>
+			<textField>
+				<reportElement x="146" y="162" width="643" height="68" uuid="eaa57ba5-9fb1-4929-8512-45e7a72fb346"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{observacoes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="643" y="62" width="89" height="60" uuid="2906f10b-58d0-44ef-b0f5-fa771bdc47ae"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[R$]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement x="163" y="74" width="469" height="31" uuid="95a00e7c-feee-4385-a984-1be71d70b482"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="18" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ALONSO BATISTA FILHO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="265" y="63" width="271" height="1" uuid="f064f846-bacf-4f45-999a-46c81a4013a4"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="29" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="41" splitType="Stretch"/>
+	</summary>
+</jasperReport>
