@@ -1,6 +1,6 @@
 # Refrival
 
-.![Portifólio](https://uploaddeimagens.com.br/images/002/181/025/original/new.PNG?1562616508)
+.![Refrival](https://uploaddeimagens.com.br/images/002/181/025/original/new.PNG?1562616508)
 
 ## Descrição do projeto
 
